@@ -3,9 +3,13 @@
 // const { addDestinationInfo } = require("./scriptHelper");
 
 // const { formSubmission } = require("./scriptHelper");
+
+
 window.addEventListener("load", function () {
     let form = document.querySelector("form");
     form.addEventListener("submit", function (event) {
+        let list = document.querySelector("div[id=faultyItems]");
+            list.style.visibility = "hidden";
         let pilotName = document.querySelector("input[name=pilotName]");
         let copilotName = document.querySelector("input[name=copilotName]");
         let fuelLevel = document.querySelector("input[name=fuelLevel]");

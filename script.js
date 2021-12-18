@@ -5,11 +5,12 @@
 // const { formSubmission } = require("./scriptHelper");
 
 
+let list = document.querySelector("div[id=faultyItems]");
+list.style.visibility = "hidden";
+
 window.addEventListener("load", function () {
     let form = document.querySelector("form");
     form.addEventListener("submit", function (event) {
-        let list = document.querySelector("div[id=faultyItems]");
-            list.style.visibility = "hidden";
         let pilotName = document.querySelector("input[name=pilotName]");
         let copilotName = document.querySelector("input[name=copilotName]");
         let fuelLevel = document.querySelector("input[name=fuelLevel]");
@@ -17,7 +18,7 @@ window.addEventListener("load", function () {
         // if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
         //     alert("All fields are required!");
         // } else {
-            formSubmission(document, document.querySelector("div[id=faultyItems]"), pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
+        formSubmission(document, document.querySelector("div[id=faultyItems]"), pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
         // }
         event.preventDefault();
     });
